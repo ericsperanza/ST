@@ -144,6 +144,7 @@ plt.yticks(np.arange(0,351,100), size = 16)
 time1.set_ylabel('Flux', size = 22)
 fig.autofmt_xdate(rotation = 90)
 
+
 # ploteo el copr en timeserie
 time2 = time1.twinx()
 copr = arnum[0:24,3]
