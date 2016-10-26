@@ -65,6 +65,7 @@ print ("Total ST: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,2])),u"\u00b1",(
 
 # creo el fondo de la figura
 fig=plt.figure(facecolor='white', figsize=(11,8))
+csfont = {'fontname':'Liberation Sans'}
 
 # agrego la serie temporal
 time1 = fig.add_axes([0.09, 0.12, 0.82, 0.85])
@@ -81,8 +82,8 @@ time1.plot(date, flux, 'o', color = 'black', markersize=10)
 time1.xaxis.set_major_locator(mdates.MonthLocator(interval = 4))
 time1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
 plt.ylim(0,20)
-plt.yticks(np.arange(0,21,10), size = 16)
-time1.set_ylabel('Vertical flux (g.$\mathregular{cm^{-2}.day^{-1}}$)', size = 22)
+plt.yticks(np.arange(0,21,10), size = 16, **csfont)
+time1.set_ylabel('Vertical flux (g.$\mathregular{cm^{-2}.day^{-1}}$)', size = 22, **csfont)
 fig.autofmt_xdate(rotation = 90)
 time1.tick_params(axis='x', which='major', labelsize=14)
 
@@ -92,9 +93,10 @@ copr = arnum[25:57,3]
 akima2 = interpolate.Akima1DInterpolator(ndate, copr)
 time2.plot(newx, akima2(newx), 'black', linestyle='--', linewidth=3)
 time2.plot(date, copr, 'o', color = 'white', markersize=10, markeredgecolor = 'black')
-plt.ylim(0,1.8)
-plt.yticks(np.arange(0,1.9,0.5), size = 16)
-time2.set_ylabel('Coprostanol (ug.$\mathregular{g^{-1}}$)', size = 22)
+plt.ylim(0,2)
+plt.yticks(np.arange(0,2.1,1), size = 16, **csfont)
+time2.set_ylabel('Coprostanol (ug.$\mathregular{g^{-1}}$)', size = 22, **csfont)
+plt.xticks(size = 16, **csfont)
 
 # agrego el boxplot
 box1 = fig.add_axes([0.35, 0.60, 0.3, 0.35])
@@ -109,7 +111,7 @@ pprop = dict(marker = 'o', markeredgecolor = 'white', markerfacecolor = 'white')
 cap = dict(linewidth = 2)
 box1.boxplot([WN[:,0],CN[:,0]], vert=True, positions = (0.9,1.9), notch=False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop, whiskerprops = wprop, medianprops = mprop, meanprops = pprop, capprops = cap)
 plt.ylim(0,10)
-plt.yticks(np.arange(0,10,5), size = 16)
+plt.yticks(np.arange(0,10.1,5), size = 16, **csfont)
 #box1.set_ylabel('Flux', size = 22)
 
 # ploteo coprostanol
@@ -121,9 +123,9 @@ cap2 = dict(linewidth = 2)
 box2 = box1.twinx()
 box2.boxplot([WN[:,1], CN[:,1]], notch=None, vert = True, positions = (0.9,2.2),   patch_artist = True, showmeans = True, showfliers = False,boxprops = bprop2, whiskerprops = wprop, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
 plt.ylim(0,1)
-plt.yticks(np.arange(0,1,0.5), size = 16)
+plt.yticks(np.arange(0,1.1,0.5), size = 16, **csfont)
 #box2.set_ylabel('Copr', size = 22)
-plt.xticks(np.arange(4), ('','Warm','Cold',''), size =22)
+plt.xticks(np.arange(4), ('','Warm','Cold',''), size =22, **csfont)
 plt.setp(box1.get_xticklabels(), visible = 'True', fontsize = 22)
 
 print("t-test N (flux, copr, total)")
