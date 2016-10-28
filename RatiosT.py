@@ -79,4 +79,10 @@ box1.text(6.5,1.03,r'Cop/ethylCop', fontsize = 18, **csfont)
 box1.text(9.5,1.03,r'Sito/ethylCop', fontsize = 18, **csfont)
 box1.text(13.0,1.03,r'Chnol/Chrol', fontsize = 18, **csfont)
 
+print("Fecal/Phyto: ", ttest_ind(arnum2[0:24,22],arnum2[25:57,22]))
+print("Cop/Epi: ", ttest_ind(arnum2[0:24,21],arnum2[25:57,21]))
+print("Cop/eCop: ", ttest_ind(arnum2[0:24,23],arnum2[25:57,23]))
+print("Sito/eCop: ", ttest_ind(arnum2[0:24,24],arnum2[25:57,24]))
+print("Chnol/Chrol: ", ttest_ind(arnum2[0:24,25],arnum2[25:57,25]))
+
 plt.show()
