@@ -1,4 +1,4 @@
-# WarmColdDiffRat.py
+# WarmColdDiffPhyt.py
 from __future__ import print_function
 import openpyxl
 import matplotlib.pyplot as plt
@@ -57,12 +57,19 @@ print (CBZ[:,1])
 # imprimo las medias y desvios para cada estacion y variable
 print ("Warm vs. Cold\nBZ:")
 print ("Flux: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,0])),u"\u00b1",(np.std(WBZ[:,0],dtype=float,ddof=1)),(np.mean(CBZ[:,0])),u"\u00b1",(np.std(CBZ[:,0],dtype=float,ddof=1))))
-print ("Cop/Epi: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,8])),u"\u00b1",(np.std(WBZ[:,8],dtype=float,ddof=1)),(np.mean(CBZ[:,8])),u"\u00b1",(np.std(CBZ[:,8],dtype=float,ddof=1))))
+print ("Coprostanol: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,1])),u"\u00b1",(np.std(WBZ[:,1],dtype=float,ddof=1)),(np.mean(CBZ[:,1])),u"\u00b1",(np.std(CBZ[:,1],dtype=float,ddof=1))))
 print ("Total ST: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,2])),u"\u00b1",(np.std(WBZ[:,2],dtype=float,ddof=1)),(np.mean(CBZ[:,2])),u"\u00b1",(np.std(CBZ[:,2],dtype=float,ddof=1))))
 print ("N:")
 print ("Flux: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,0])),u"\u00b1",(np.std(WN[:,0],dtype=float,ddof=1)),(np.mean(CN[:,0])),u"\u00b1",(np.std(CN[:,0],dtype=float,ddof=1))))
-print ("Cop/epi: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,8])),u"\u00b1",(np.std(WN[:,8],dtype=float,ddof=1)),(np.mean(CN[:,8])),u"\u00b1",(np.std(CN[:,8],dtype=float,ddof=1))))
+print ("Coprostanol: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,1])),u"\u00b1",(np.std(WN[:,1],dtype=float,ddof=1)),(np.mean(CN[:,1])),u"\u00b1",(np.std(CN[:,1],dtype=float,ddof=1))))
 print ("Total ST: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,2])),u"\u00b1",(np.std(WN[:,2],dtype=float,ddof=1)),(np.mean(CN[:,2])),u"\u00b1",(np.std(CN[:,2],dtype=float,ddof=1))))
+
+c = -2
+for i in ar.columns:
+	print (c,i)
+	c+=1
+
+x = input ("variable a plotear: ")
 
 # creo el fondo de la figura
 fig=plt.figure(facecolor='white', figsize=(9,14))
@@ -89,18 +96,18 @@ fig.autofmt_xdate(rotation = 90)
 time1.tick_params(axis='x', which='major', labelsize=14)
 time1.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 
-# ploteo el ratio en timeserie
+# ploteo x en timeserie
 time2 = time1.twinx()
-ratio = arnum[0:17,10]
+xBZ = arnum[0:17,(x+2)]
 """# paso el copro a mg/g en el array copr
 for a in range (0,17):
 	copr[a] = copr[a]/1000"""
-akima2 = interpolate.Akima1DInterpolator(ndate, ratio)
-time2.plot(newx, akima2(newx), 'black', color = 'maroon',linewidth=3 )
-time2.plot(date, ratio, 'o', color = 'white', markersize=10,markeredgecolor = 'black')
-plt.ylim(0,2)
-plt.yticks(np.arange(0,2.1,0.5), size = 16, **csfont)
-time2.set_ylabel('Coprostanol/Epicoporstanol', size = 22, position = (1,0), **csfont)
+akima2 = interpolate.Akima1DInterpolator(ndate, xBZ)
+time2.plot(newx, akima2(newx), 'black', color = 'g',linewidth=3 )
+time2.plot(date, xBZ, 'o', color = 'white', markersize=10,markeredgecolor = 'black')
+plt.ylim(0,2200)
+plt.yticks(np.arange(0,2001,500), size = 16, **csfont)
+time2.set_ylabel('Phytosterols ($\mathregular{ug.g^{-1}}$)', size = 22, position =(1,0), **csfont)
 plt.xticks(size = 16, **csfont)
 time2.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 plt.setp(time1.get_xticklabels(),visible=False)
@@ -119,17 +126,18 @@ cap = dict(linewidth = 1)
 box1.boxplot([WBZ[:,0],CBZ[:,0]], vert=True, positions = (0.9,1.9), notch=False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop, whiskerprops = wprop, medianprops = mprop, meanprops = pprop, capprops = cap)
 plt.ylim(0,255)
 plt.yticks(np.arange(0,255,125), size = 13, **csfont)
+#box1.set_ylabel('Flux', size = 22)
 
-# ploteo ratio
+# ploteo x
 bprop2 = dict(linewidth = 1)
 wprop2 = dict(linewidth = 1, linestyle = '-', color = 'black')
 mprop2 = dict(linestyle = '-', linewidth = 1, color = 'black')
 pprop2 = dict(marker = 'o', markeredgecolor = 'black', markerfacecolor = 'black', markersize=5)
 cap2 = dict(linewidth = 1)
 box2 = box1.twinx()
-box2.boxplot([WBZ[:,8], CBZ[:,8]], notch=None, vert = True, positions = (0.9,2.2),   patch_artist = True, showmeans = True, showfliers = False,boxprops = bprop2, whiskerprops = wprop, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
-plt.ylim(0,2)
-plt.yticks(np.arange(0,2.1,0.50), size = 13, **csfont)
+box2.boxplot([WBZ[:,x], CBZ[:,x]], notch=None, vert = True, positions = (0.9,2.2),   patch_artist = True, showmeans = True, showfliers = False,boxprops = bprop2, whiskerprops = wprop, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
+plt.ylim(0,1500)
+plt.yticks(np.arange(0,1501,500), size = 13, **csfont)
 #box2.set_ylabel('Copr', size = 22)
 plt.xticks(np.arange(4), ('','Warm','Cold',''), size =14, **csfont)
 plt.setp(box1.get_xticklabels(), visible = 'True', fontsize = 16)
@@ -160,42 +168,42 @@ time3.tick_params(axis='x', which='major', labelsize=14)
 plt.xticks(size = 16, rotation='vertical', **csfont)
 time3.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 
-# ploteo el ratio N en timeserie
+# ploteo el xN en timeserie
 time4 = time3.twinx()
-ratioN = arnum[18:42,10]
-akima4 = interpolate.Akima1DInterpolator(ndateN, ratioN)
-time4.plot(newxN, akima4(newxN), 'black', color = 'maroon', linewidth=3)
-time4.plot(dateN, ratioN, 'o', color = 'white', markersize=10, markeredgecolor = 'black')
-plt.ylim(0,1)
-plt.yticks(np.arange(0,1.1,0.5), size = 16, **csfont)
+xN = arnum[18:42,(x+2)]
+akima4 = interpolate.Akima1DInterpolator(ndateN, xN)
+time4.plot(newxN, akima4(newxN), 'black', color = 'g', linewidth=3)
+time4.plot(dateN, xN, 'o', color = 'white', markersize=10, markeredgecolor = 'black')
+plt.ylim(0,150)
+plt.yticks(np.arange(0,151,50), size = 16, **csfont)
 #time4.set_ylabel('Coprostanol (ug.$\mathregular{g^{-1}}$)', size = 22, **csfont)
 time4.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 
 # agrego el boxplot
-box3 = fig.add_axes([0.4, 0.356, 0.18, 0.18])
+box3 = fig.add_axes([0.141, 0.356, 0.18, 0.18])
 # ploteo flujo
 box3.boxplot([WN[:,0],CN[:,0]], vert=True, positions = (0.9,1.9), notch=False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop, whiskerprops = wprop, medianprops = mprop, meanprops = pprop, capprops = cap)
 plt.ylim(0,10)
 plt.yticks(np.arange(0,10.1,5), size = 13, **csfont)
 
-# ploteo sito N
+# ploteo xN
 box4 = box3.twinx()
-box4.boxplot([WN[:,10], CN[:,10]], notch=None, vert = True, positions = (0.9,2.2),   patch_artist = True, showmeans = True, showfliers = False,boxprops = bprop2, whiskerprops = wprop, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
-plt.ylim(0,1)
-plt.yticks(np.arange(0,1.1,0.5), size = 13, **csfont)
+box4.boxplot([WN[:,x], CN[:,x]], notch=None, vert = True, positions = (0.9,2.2),   patch_artist = True, showmeans = True, showfliers = False,boxprops = bprop2, whiskerprops = wprop, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
+plt.ylim(0,100)
+plt.yticks(np.arange(0,101,50), size = 13, **csfont)
 plt.xticks(np.arange(4), ('','Warm','Cold',''), size =16, **csfont)
 plt.setp(box3.get_xticklabels(), visible = 'True', fontsize = 16)
 print(time4.get_xlim())
 print("t-test BZ (flux, copr, total)")
-for a in range(13):
+for a in range(14):
 	print(a, ttest_ind(WBZ[:,a],CBZ[:,a]))
 print("Pearson for Flux-Copr:")
-print(pearsonr(flux,ratio))
+print(pearsonr(flux,xBZ))
 print("t-test N (flux, copr, total)")
-for a in range(13):
+for a in range(14):
 	print(a, ttest_ind(WN[:,a],CN[:,a]))
 print("Pearson for Flux-Copr:")
-print(pearsonr(fluxN,ratioN))
+print(pearsonr(fluxN,xN))
 
 
 plt.show()
