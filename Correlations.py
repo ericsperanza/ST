@@ -34,7 +34,7 @@ for i in ar.columns:
 	c+=1
 x,y = input ("variables a testear (separadas por coma, s/espacios) ")
 
-print ("Correlacion (R2, p-value)")
+print ("Correlacion (r, p-value)")
 print ("Todos: ",pearsonr(arnum[:,x],arnum[:,y]))
 print ("BA: ",pearsonr(arnum[0:17,x],arnum[0:17,y]))
 print ("N: ",pearsonr(arnum[18:42,x],arnum[18:42,y]))
@@ -49,13 +49,14 @@ modelx = sm.GLS(arnum[:,x],numdate)
 resx = modelx.fit()
 print(resx.resid)
 """
+"""
 numdate=numdate.reshape(-1,1)
 print(numdate)
 modelx = linear_model.LinearRegression()
 modelx.fit(numdate,arnum[:,x])
 
 print(modelx.residues_)
-
+"""
 
 
 
