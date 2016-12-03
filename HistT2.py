@@ -18,6 +18,8 @@ arpp = pd.read_excel('HistRatios.xlsx','pp',header=0, index_col=None, na_values=
 arnumpp=arpp.values
 arsed = pd.read_excel('HistRatios.xlsx','sed',header=0, index_col=None, na_values=['NA'])
 arnumsed=arsed.values
+#arfec = pd.read_excel('HistRatios.xlsx','fec',header=0, index_col=None, na_values=['NA'])
+#arnumfec= arfec.values
 
 # cuento cuantas muestras hay en BZ y N
 sizeBZ=0
@@ -48,8 +50,10 @@ cols = np.arange(17) # ctdad de barras(= esteroles)
 ancho = 0.3
 eb = {'linewidth':2,'capsize':4,'ecolor':'r'}
 eb2 = {'linewidth':2,'capsize':4,'ecolor':'g'}
+#eb3 = {'linewidth':2,'capsize':4,'ecolor':'brown'}
 rect1 = histo.bar(cols,meandevBZ[0,:],ancho, color = 'r', yerr=[np.zeros(17), meandevBZ[1,:]], error_kw=eb, linewidth=0, log=True)
 rect2 = histo.bar(cols+ancho,meandevN[0,:], ancho, color = 'g', yerr = [np.zeros(17),meandevN[1,:]], error_kw = eb2, linewidth=0, log=True)
+#rect3 = histo.bar(cols+ancho*2,arnumfec[0,1:18], ancho, color = 'brown', yerr = [np.zeros(17),arnumfec[1,1:18]], error_kw = eb3, linewidth=0, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
 histo.set_ylabel('Sterols (ug.$\mathregular{g^{-1}}$)', size=20,**csfont)
@@ -92,7 +96,7 @@ tortaBZ.text(1.4,-1.06, r'Phytosterols', fontsize=18,**csfont)
 tortaBZ.arrow(0.74,-0.6,0.6,-0.33,head_width=0.02,width=0.01,head_length=0,clip_on=False,color='black',edgecolor='black')
 tortaBZ.arrow(3.26,-0.95,1.4,0,head_width=0.02,width=0.01,head_length=0,clip_on=False,color='black',edgecolor='black')
 # coloreo las ticklabels segun categoria
-labelcol =['saddlebrown','saddlebrown','saddlebrown','saddlebrown','saddlebrown','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','dodgerblue','dodgerblue','grey','dodgerblue','dodgerblue']
+labelcol =['saddlebrown','saddlebrown','saddlebrown','saddlebrown','saddlebrown','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','dodgerblue','grey','dodgerblue','dodgerblue','dodgerblue']
 [lab.set_color(i) for (i,lab) in zip(labelcol, histo.xaxis.get_ticklabels())] 
 fontdict = dict(color='red',weight='heavy',**csfont)
 tortaBZ.text(-1.5,0.7,r'BA', fontsize=22,fontdict=fontdict)
@@ -121,9 +125,10 @@ for i in range(1,18):
 	meansedN = (np.append(meansedN,[[np.mean(arnumsed[sBZ:(sBZ+sN),i])],[np.std(arnumsed[sBZ:(sBZ+sN),i],dtype=float,ddof=1)]], axis = 1))
 
 #creo el histograma sedimentos
+ancho=0.3
 histo2 = fig.add_axes([0.18, 0.21, 0.8, 0.25])
-rect2 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'r', yerr=[np.zeros(17), meansedBZ[1,:]], error_kw=eb, linewidth=0, log=True)
-rect2 = histo2.bar(cols+ancho,meansedN[0,:], ancho, color = 'g', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=0, log=True)
+rect4 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'r', yerr=[np.zeros(17), meansedBZ[1,:]], error_kw=eb, linewidth=0, log=True)
+rect5 = histo2.bar(cols+ancho,meansedN[0,:], ancho, color = 'g', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=0, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
 histo2.set_ylabel('Sterols (ug.$\mathregular{g^{-1}}$)', size=20,**csfont)
@@ -150,11 +155,12 @@ tortaBZ2.set_aspect('equal')
 tortaN2.set_aspect('equal')
 
 # coloreo las ticklabels segun categoria
-labelcol = ['saddlebrown','saddlebrown','saddlebrown','saddlebrown','saddlebrown','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','dodgerblue','dodgerblue','grey','dodgerblue','dodgerblue']
+labelcol = ['saddlebrown','saddlebrown','saddlebrown','saddlebrown','saddlebrown','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','limegreen','grey','dodgerblue','dodgerblue','dodgerblue','dodgerblue']
 [lab.set_color(i) for (i,lab) in zip(labelcol, histo2.xaxis.get_ticklabels())] 
 fontdict = dict(color='red',weight='heavy',**csfont)
 #tortaBZ2.text(-1.5,0.3,r'BA', fontsize=22,fontdict=fontdict)
 fontdictN2 = dict(color='g',weight='heavy',**csfont)
 #tortaN.text(0.91,0.3,r'N', fontsize=22,fontdict=fontdictN)
+#print(arnumfec[0,1:18])
 
 plt.show()
