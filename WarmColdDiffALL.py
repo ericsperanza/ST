@@ -199,8 +199,10 @@ for a in range(3):
 	print(ttest_ind(WN[:,a],CN[:,a]))
 print("Pearson for Flux-Copr:")
 print(pearsonr(fluxN,coprN))
-
-
+#calculo el area bajo la curva de copr para saber lo que se deposito en total
+#divido x el periodo que es 6,6 anios y paso a gramos
+area=(np.trapz(akima2(newx),newx))/(6.6*1000)
+print(area)
 plt.show()
 
 
