@@ -77,7 +77,7 @@ plt.xlim(0,50)
 plt.xticks(np.arange(0,51,25),size=16,**csfont)
 scat1.get_yaxis().set_major_formatter(tick.ScalarFormatter())
 
-scat1.set_ylabel('Total particle flux (g.$\mathregular{cm^{-2}.day^{-1}}$)',size=22,**csfont)
+scat1.set_ylabel('Total particle flux (mg.$\mathregular{cm^{-2}.day^{-1}}$)',size=22,**csfont)
 scat1.set_xlabel('River discharge ($\mathregular{m^{3}.s}$)',size=22,**csfont)
 scat1.spines['right'].set_visible(False)
 scat1.yaxis.set_ticks_position('left')

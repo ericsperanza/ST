@@ -1,6 +1,6 @@
 # WarmColdDiffALL.py
 from __future__ import print_function
-import openpyxl
+#import openpyxl
 import matplotlib.pyplot as plt
 import matplotlib.cbook as cbook
 import matplotlib.dates as mdates
@@ -13,9 +13,9 @@ import pandas as pd
 import datetime
 
 # importo datos de excel y paso valores al array arnum
-libro = openpyxl.load_workbook('compWC.xlsx')
-hoja = libro.get_sheet_by_name('h2')
-ar = pd.read_excel('compWC.xlsx','h2', header=0, index_col=None, na_values=['NA'])
+#libro = openpyxl.load_workbook('compWC.xlsx')
+#hoja = libro.get_sheet_by_name('h6')
+ar = pd.read_excel('compWC.xlsx','h6', header=0, index_col=None, na_values=['NA'])
 arnum=ar.values
 
 # cuento cuantas muestras hay en BZ y N
@@ -85,9 +85,9 @@ time1.plot(date, flux, 'o', color = 'black', markersize=10, markeredgecolor = 'b
 time1.xaxis.set_major_locator(mdates.MonthLocator(interval = 4))
 time1.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
 #time1.plot(dd, newy)
-plt.ylim(0,350)
-plt.yticks(np.arange(0,351,100), size = 16, **csfont)
-time1.set_ylabel('Total particle flux (g.$\mathregular{cm^{-2}.day^{-1}}$)', size = 22, position = (1,0), **csfont)
+plt.ylim(0,110)
+plt.yticks(np.arange(0,111,55), size = 16, **csfont)
+time1.set_ylabel('Total particle flux (mg.$\mathregular{cm^{-2}.day^{-1}}$)', size = 22, position = (1,0), **csfont)
 fig.autofmt_xdate(rotation = 90)
 time1.tick_params(axis='x', which='major', labelsize=14)
 time1.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
@@ -119,8 +119,8 @@ mprop = dict(linestyle = '-', linewidth = 1, color = 'white')
 pprop = dict(marker = 'o', markeredgecolor = 'white', markerfacecolor = 'white', markersize = 5)
 cap = dict(linewidth = 1)
 box1.boxplot([WBZ[:,0],CBZ[:,0]], vert=True, positions = (0.9,1.9), notch=False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop, whiskerprops = wprop, medianprops = mprop, meanprops = pprop, capprops = cap)
-plt.ylim(0,250)
-plt.yticks(np.arange(0,255,125), size = 13, **csfont)
+plt.ylim(0,80)
+plt.yticks(np.arange(0,81,40), size = 13, **csfont)
 #box1.set_ylabel('Flux', size = 22)
 
 # ploteo coprostanol
@@ -155,8 +155,8 @@ time3.plot(newxN, akima3(newxN), 'black', linewidth=3)
 time3.plot(dateN, fluxN, 'o', color = 'black', markersize=10)
 time3.xaxis.set_major_locator(mdates.MonthLocator(interval = 4))
 time3.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m'))
-plt.ylim(0,20)
-plt.yticks(np.arange(0,21,10), size = 16, **csfont)
+plt.ylim(0,8)
+plt.yticks(np.arange(0,8.1,4), size = 16, **csfont)
 #time3.set_ylabel('Vertical flux (g.$\mathregular{cm^{-2}.day^{-1}}$)', size = 22, **csfont)
 fig.autofmt_xdate(rotation = 90)
 time3.tick_params(axis='x', which='major', labelsize=14)
@@ -178,8 +178,8 @@ time4.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 box3 = fig.add_axes([0.41, 0.356, 0.18, 0.18])
 # ploteo flujo
 box3.boxplot([WN[:,0],CN[:,0]], vert=True, positions = (0.9,1.9), notch=False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop, whiskerprops = wprop, medianprops = mprop, meanprops = pprop, capprops = cap)
-plt.ylim(0,10)
-plt.yticks(np.arange(0,10.1,5), size = 13, **csfont)
+plt.ylim(0,3)
+plt.yticks(np.arange(0,3.1,1.5), size = 13, **csfont)
 
 # ploteo coprostanol N
 box4 = box3.twinx()
