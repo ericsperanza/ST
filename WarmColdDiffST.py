@@ -102,7 +102,7 @@ time2.plot(newx, akima2(newx), 'black', linestyle=':',linewidth=3 )
 time2.plot(date, totalBZ, 'o', color = 'white', markersize=10,markeredgecolor = 'black')
 plt.ylim(0,30)
 plt.yticks(np.arange(0,31,10), size = 16, **csfont)
-time2.set_ylabel('Coprostanol (mg.$\mathregular{g^{-1}}$)', size = 22, **csfont)
+time2.set_ylabel('Total sterols (mg.$\mathregular{g^{-1}}$)', size = 22, **csfont)
 plt.xticks(size = 16, **csfont)
 time2.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 plt.setp(time1.get_xticklabels(),visible=False)
@@ -171,7 +171,7 @@ time4.plot(newxN, akima4(newxN), 'black', linestyle=':', linewidth=3)
 time4.plot(dateN, totalN, 'o', color = 'white', markersize=10, markeredgecolor = 'black')
 plt.ylim(0,250)
 plt.yticks(np.arange(0,251,125), size = 16, **csfont)
-time4.set_ylabel('Coprostanol (ug.$\mathregular{g^{-1}}$)', size = 22, **csfont)
+time4.set_ylabel('Total sterols (ug.$\mathregular{g^{-1}}$)', size = 22, **csfont)
 time4.set_xlim([datetime.date(2007,12,1),datetime.date(2014,3,7)])
 
 # agrego el boxplot
@@ -192,12 +192,12 @@ print(time4.get_xlim())
 print("t-test BZ (flux, copr, total)")
 for a in range(14):
 	print(a, ttest_ind(WBZ[:,a],CBZ[:,a]))
-print("Pearson for Flux-Copr:")
+print("Pearson for Flux-ST:")
 print(pearsonr(flux,totalBZ))
 print("t-test N (flux, copr, total)")
 for a in range(14):
 	print(a, ttest_ind(WN[:,a],CN[:,a]))
-print("Pearson for Flux-Copr:")
+print("Pearson for Flux-ST:")
 print(pearsonr(fluxN,totalN))
 
 
