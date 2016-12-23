@@ -34,40 +34,42 @@ for a in arnum[:,0]:
 	if a == 'N':
 		sizeN+=1
 
-years = 6.6
+years = 7
 densidad = 2.65
 #calculo g/cm2 de particles depositadas al anio
-depBA = np.mean(arnum[0:17,3])
+depBA = np.mean(arnum2[0:17,3])
 print("BA:")
 print("Deposition mass (g/cm2/year): %.2f"%depBA)
 print("Sedimentation rate (cm/year): %.2f"%(depBA/densidad))
-depN = np.mean(arnum[18:42,3])
+depN = np.mean(arnum2[18:42,3])
 print("N:")
 print("Deposition mass (g/cm2/year): %.2f"%depN)
 print("Sedimentation rate (cm/year): %.2f"%(depN/densidad))
 
 # paso fechas a numeros y hago un vector lineal de 200 units
-date = arnum[0:17,1]
+date = arnum2[0:17,1]
 ndate = np.empty((0,1))
 for i in date:
 	ndate = np.append(ndate,(mdates.date2num(i)))
-newx = np.linspace(ndate.min(),ndate.max(), 200)
+newx = np.linspace(ndate.min(),ndate.max(), 2555)
 
 # imprimo los % de retencion 
 print("Retention in sediment (%)")
 print("BA")
 headers = []
-for i in ar.columns:
+for i in ar2.columns:
 	headers.append(i) 
 
 BA = np.empty((0,1))
 for i in range(20):
-	akima = interpolate.Akima1DInterpolator(ndate, arnum[0:17,i+4])	
+	akima = interpolate.Akima1DInterpolator(ndate, arnum2[0:17,i+4])	
 	area = 	((np.trapz(akima(newx), newx))/(years))
 	ret = ((100*(((arnum3[0,i+4])/1000000)*depBA))/area)
 	print(headers[i+4],area,ret)
-	
 
-
+plt.plot(newx,akima(newx))
+plt.bar(newx,akima(newx))
+print((sum(akima(newx)))/17)
+plt.show()
 #N = np.empty((0,1))
 

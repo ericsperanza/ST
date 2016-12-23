@@ -80,9 +80,18 @@ box1.text(9.5,1.03,r'Sito/ethylCop', fontsize = 18, **csfont)
 box1.text(13.0,1.03,r'Chnol/Chrol', fontsize = 18, **csfont)
 
 print("Fecal/Phyto: ", ttest_ind(arnum2[0:24,22],arnum2[25:57,22]))
+print("BA vs N: %.2f %s %.3f vs %.2f %s %.2f"%((np.mean(arnum2[0:24,22])), u"\u00b1", (np.std(arnum2[0:24,22], dtype=float,ddof=1)),(np.mean(arnum2[25:57,22])), u"\u00b1", (np.std(arnum2[25:57,22], dtype=float,ddof=1))))
+
 print("Cop/Epi: ", ttest_ind(arnum2[0:24,21],arnum2[25:57,21]))
+print("BA vs N: %.2f %s %.2f vs %.2f %s %.2f"%((np.mean(arnum2[0:24,21])), u"\u00b1", (np.std(arnum2[0:24,21], dtype=float,ddof=1)),(np.mean(arnum2[25:57,21])), u"\u00b1", (np.std(arnum2[25:57,21], dtype=float,ddof=1))))
+
 print("Cop/eCop: ", ttest_ind(arnum2[0:24,23],arnum2[25:57,23]))
+print("BA vs N: %.2f %s %.3f vs %.2f %s %.2f"%((np.mean(arnum2[0:24,23])), u"\u00b1", (np.std(arnum2[0:24,23], dtype=float,ddof=1)),(np.mean(arnum2[25:57,23])), u"\u00b1", (np.std(arnum2[25:57,23], dtype=float,ddof=1))))
+
 print("Sito/eCop: ", ttest_ind(arnum2[0:24,24],arnum2[25:57,24]))
+print("BA vs N: %.2f %s %.2f vs %.2f %s %.2f"%((np.mean(arnum2[0:24,24])), u"\u00b1", (np.std(arnum2[0:24,24], dtype=float,ddof=1)),(np.mean(arnum2[25:57,24])), u"\u00b1", (np.std(arnum2[25:57,24], dtype=float,ddof=1))))
+
 print("Chnol/Chrol: ", ttest_ind(arnum2[0:24,25],arnum2[25:57,25]))
+print("BA vs N: %.2f %s %.3f vs %.3f %s %.3f"%((np.mean(arnum2[0:24,25])), u"\u00b1", (np.std(arnum2[0:24,25], dtype=float,ddof=1)),(np.mean(arnum2[25:57,25])), u"\u00b1", (np.std(arnum2[25:57,25], dtype=float,ddof=1))))
 
 plt.show()
