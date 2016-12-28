@@ -51,7 +51,7 @@ date = arnum2[0:17,1]
 ndate = np.empty((0,1))
 for i in date:
 	ndate = np.append(ndate,(mdates.date2num(i)))
-newx = np.linspace(ndate.min(),ndate.max(), 2555)
+newx = np.linspace(ndate.min(),ndate.max(), 100)
 
 # imprimo los % de retencion 
 print("Retention in sediment (%)")
