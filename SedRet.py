@@ -46,12 +46,14 @@ print("N:")
 print("Deposition mass (g/cm2/year): %.2f"%depN)
 print("Sedimentation rate (cm/year): %.2f"%(depN/densidad))
 
+# BZ
+
 # paso fechas a numeros y hago un vector lineal de 200 units
 date = arnum2[0:17,1]
 ndate = np.empty((0,1))
 for i in date:
 	ndate = np.append(ndate,(mdates.date2num(i)))
-newx = np.linspace(ndate.min(),ndate.max(), 100)
+newx = np.linspace(ndate.min(),ndate.max(), 2555)
 
 # imprimo los % de retencion 
 print("Retention in sediment (%)")
@@ -71,5 +73,28 @@ plt.plot(newx,akima(newx))
 plt.bar(newx,akima(newx))
 print((sum(akima(newx)))/17)
 plt.show()
-#N = np.empty((0,1))
+
+# N
+
+# paso fechas a numeros y hago un vector lineal de 200 units
+date = arnum2[18:42,1]
+ndate = np.empty((0,1))
+for i in date:
+	ndate = np.append(ndate,(mdates.date2num(i)))
+newx = np.linspace(ndate.min(),ndate.max(), 2555)
+
+# imprimo los % de retencion 
+print("Retention in sediment (%)")
+print("N")
+headers = []
+for i in ar2.columns:
+	headers.append(i) 
+
+BA = np.empty((0,1))
+for i in range(20):
+	akima2 = interpolate.Akima1DInterpolator(ndate, arnum2[18:42,i+4])	
+	area2 = ((np.trapz(akima2(newx), newx))/(years))
+	ret2 = ((100*(((arnum3[1,i+4])/1000000)*depN))/area2)
+	print(headers[i+4],area2,ret2)
+
 
