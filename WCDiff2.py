@@ -9,8 +9,8 @@ import datetime
 
 # importo datos de excel y paso valores al array arnum
 libro = openpyxl.load_workbook('compWC.xlsx')
-hoja = libro.get_sheet_by_name('h8')
-ar = pd.read_excel('compWC.xlsx','h8', header=0, index_col=None, na_values=['NA'])
+hoja = libro.get_sheet_by_name('h7')
+ar = pd.read_excel('compWC.xlsx','h7', header=0, index_col=None, na_values=['NA'])
 arnum=ar.values
 
 # cuento cuantas muestras hay en BZ y N
@@ -45,12 +45,12 @@ for i in ar.columns:
 print("BA:")
 print("Warm vs. Cold; p-value; r with flux")
 for i in range (1,20):
-	print("%s: %.2f %s %.2f vs %.2f %s %.2f; t-test: %.4f; r: %.2f, %.4f"%(headers[i+2],(np.mean(WBZ[:,i])),u"\u00b1",(np.std(WBZ[:,i],dtype=float,ddof=1)),(np.mean(CBZ[:,i])),u"\u00b1",(np.std(CBZ[:,i],dtype=float,ddof=1)),(ttest_ind(WBZ[:,i],CBZ[:,i]))[1],(pearsonr(arnum[0:17,2],arnum[0:17,i+2]))[0],(pearsonr(arnum[0:17,2],arnum[0:17,i+2]))[1] ) ).encode('utf-8')
+	print("%s: %.2f %s %.2f vs %.2f %s %.2f; t-test: %.4f; r: %.2f, %.4f"%(headers[i+2],(np.mean(WBZ[:,i])),u"\u00b1",(np.std(WBZ[:,i],dtype=float,ddof=1)),(np.mean(CBZ[:,i])),u"\u00b1",(np.std(CBZ[:,i],dtype=float,ddof=1)),(ttest_ind(WBZ[:,i],CBZ[:,i]))[1],(pearsonr(arnum[0:24,2],arnum[0:24,i+2]))[0],(pearsonr(arnum[0:24,2],arnum[0:24,i+2]))[1] ) ).encode('utf-8')
 	
 print("N:")
 print("Warm vs. Cold; p-value; r with flux")
 for i in range (1,20):
-	print("%s: %.2f %s %.2f vs %.2f %s %.2f; t-test: %.4f; r: %.2f, %.4f"%(headers[i+2],(np.mean(WN[:,i])),u"\u00b1",(np.std(WN[:,i],dtype=float,ddof=1)),(np.mean(CN[:,i])),u"\u00b1",(np.std(CN[:,i],dtype=float,ddof=1)),(ttest_ind(WN[:,i],CN[:,i]))[1],(pearsonr(arnum[18:42,2],arnum[18:42,i+2]))[0],(pearsonr(arnum[18:42,2],arnum[18:42,i+2]))[1] ) ).encode('utf-8')
+	print("%s: %.2f %s %.2f vs %.2f %s %.2f; t-test: %.4f; r: %.2f, %.4f"%(headers[i+2],(np.mean(WN[:,i])),u"\u00b1",(np.std(WN[:,i],dtype=float,ddof=1)),(np.mean(CN[:,i])),u"\u00b1",(np.std(CN[:,i],dtype=float,ddof=1)),(ttest_ind(WN[:,i],CN[:,i]))[1],(pearsonr(arnum[25:57,2],arnum[25:57,i+2]))[0],(pearsonr(arnum[25:57,2],arnum[25:57,i+2]))[1] ) ).encode('utf-8')
 	
 	
 	

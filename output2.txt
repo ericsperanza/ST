@@ -1,0 +1,42 @@
+BA:
+Warm vs. Cold; p-value; r with flux
+Coprostanol: 57.61 ± 9.10 vs 44.44 ± 8.25; t-test: 0.0013; r: 0.29, 0.1766
+Epicoprostanol: 3.26 ± 3.05 vs 16.53 ± 9.74; t-test: 0.0001; r: -0.50, 0.0125
+Ethylcoprostanol: 9.00 ± 3.10 vs 7.93 ± 5.72; t-test: 0.5647; r: 0.40, 0.0533
+Coprostanone: 5.05 ± 2.63 vs 5.74 ± 4.13; t-test: 0.6259; r: 0.25, 0.2482
+Coprostane: 0.02 ± 0.06 vs 0.08 ± 0.17; t-test: 0.2594; r: -0.17, 0.4384
+b-Sitosterol: 4.16 ± 2.30 vs 4.59 ± 1.22; t-test: 0.5787; r: -0.10, 0.6348
+γ-Sitosterol: 0.11 ± 0.14 vs 0.16 ± 0.43; t-test: 0.6901; r: -0.14, 0.5128
+Stigmasterol: 0.77 ± 0.74 vs 1.36 ± 0.62; t-test: 0.0508; r: -0.59, 0.0022
+Stigmastanol: 1.35 ± 0.89 vs 1.96 ± 0.78; t-test: 0.0937; r: -0.20, 0.3469
+Campesterol: 0.82 ± 1.04 vs 1.49 ± 0.63; t-test: 0.0779; r: -0.31, 0.1375
+Campestanol: 0.01 ± 0.01 vs 0.01 ± 0.02; t-test: 0.6371; r: 0.36, 0.0846
+Brassicasterol: 0.00 ± 0.01 vs 0.01 ± 0.02; t-test: 0.5667; r: 0.23, 0.2768
+Desmosterol: 0.00 ± 0.01 vs 0.01 ± 0.03; t-test: 0.5878; r: -0.03, 0.9038
+Cholesterol: 13.24 ± 2.91 vs 11.23 ± 2.49; t-test: 0.0849; r: 0.18, 0.4100
+Cholestanol: 1.72 ± 1.15 vs 1.61 ± 1.21; t-test: 0.8183; r: -0.31, 0.1363
+Dehydrocholesterol: 2.87 ± 1.13 vs 2.87 ± 1.36; t-test: 0.9991; r: 0.11, 0.6121
+Ergosterol: 0.00 ± 0.00 vs 0.00 ± 0.00; t-test: nan; r: nan, 1.0000
+fecales: 74.94 ± 6.03 vs 74.72 ± 4.74; t-test: 0.9222; r: 0.16, 0.4580
+fitosteroles: 7.22 ± 4.19 vs 9.56 ± 2.18; t-test: 0.1090; r: -0.32, 0.1301
+N:
+Warm vs. Cold; p-value; r with flux
+Coprostanol: 1.15 ± 0.83 vs 1.52 ± 1.60; t-test: 0.4125; r: -0.04, 0.8151
+Epicoprostanol: 1.11 ± 0.98 vs 1.28 ± 1.18; t-test: 0.6666; r: 0.17, 0.3511
+Ethylcoprostanol: 3.19 ± 3.59 vs 4.57 ± 5.77; t-test: 0.4097; r: -0.25, 0.1628
+Coprostanone: 1.30 ± 2.77 vs 0.88 ± 1.35; t-test: 0.5861; r: 0.18, 0.3281
+Coprostane: 0.01 ± 0.05 vs 0.01 ± 0.04; t-test: 0.8719; r: -0.12, 0.5060
+b-Sitosterol: 18.53 ± 5.30 vs 20.04 ± 5.62; t-test: 0.4325; r: 0.17, 0.3419
+γ-Sitosterol: 0.03 ± 0.12 vs 1.24 ± 2.30; t-test: 0.0383; r: -0.10, 0.5765
+Stigmasterol: 14.60 ± 6.70 vs 14.77 ± 9.18; t-test: 0.9518; r: -0.17, 0.3389
+Stigmastanol: 8.25 ± 4.85 vs 9.17 ± 3.99; t-test: 0.5596; r: 0.06, 0.7255
+Campesterol: 12.02 ± 4.42 vs 14.28 ± 14.67; t-test: 0.5471; r: -0.15, 0.4013
+Campestanol: 0.49 ± 1.82 vs 0.80 ± 1.77; t-test: 0.6198; r: 0.08, 0.6463
+Brassicasterol: 0.13 ± 0.36 vs 0.45 ± 0.96; t-test: 0.1976; r: -0.09, 0.6375
+Desmosterol: 0.37 ± 0.99 vs 1.06 ± 1.93; t-test: 0.1982; r: -0.23, 0.1996
+Cholesterol: 28.23 ± 12.00 vs 23.15 ± 11.08; t-test: 0.2160; r: 0.25, 0.1604
+Cholestanol: 1.50 ± 1.67 vs 1.61 ± 2.68; t-test: 0.8959; r: -0.02, 0.9061
+Dehydrocholesterol: 8.59 ± 9.62 vs 4.56 ± 3.66; t-test: 0.1259; r: -0.11, 0.5449
+Ergosterol: 0.50 ± 1.93 vs 1.32 ± 4.50; t-test: 0.4986; r: 0.14, 0.4544
+fecales: 6.76 ± 5.84 vs 8.26 ± 8.18; t-test: 0.5471; r: -0.10, 0.5885
+fitosteroles: 53.92 ± 12.97 vs 60.30 ± 12.98; t-test: 0.1675; r: -0.14, 0.4523
