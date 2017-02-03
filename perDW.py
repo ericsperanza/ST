@@ -30,5 +30,15 @@ print("DW concentration vs. percentage (percent, r, p-value)")
 for i in range(1,18):
 	print("%s: %.2f %s %.2f; r: %.2f, %.3f "%(headers[i], (np.mean(arnum2[33:66,i])), u"\u00b1", (np.std(arnum2[33:66,i],dtype=float,ddof=1)), (pearsonr(arnum2[0:33,i],arnum2[33:66,i]))[0], (pearsonr(arnum2[0:33,i],arnum2[33:66,i]))[1] ) ).encode('utf-8')
 
+print("\nCorrelation between ind. proportions vs. total DW concentration:\nBA:")
+print("TOTAL concentration vs. percentage (percent, r, p-value)")
+for i in range(1,18):
+	print("%s: %.2f %s %.2f; r: %.2f, %.3f "%(headers[i], (np.mean(arnum[24:48,i])), u"\u00b1", (np.std(arnum[24:48,i],dtype=float,ddof=1)), (pearsonr(arnum[0:24,18],arnum[24:48,i]))[0], (pearsonr(arnum[0:24,18],arnum[24:48,i]))[1] ) ).encode('utf-8')
+
+print("\nN:")
+print("TOTAL concentration vs. percentage (percent, r, p-value)")
+for i in range(1,18):
+	print("%s: %.2f %s %.2f; r: %.2f, %.3f "%(headers[i], (np.mean(arnum2[33:66,i])), u"\u00b1", (np.std(arnum2[33:66,i],dtype=float,ddof=1)), (pearsonr(arnum2[0:33,18],arnum2[33:66,i]))[0], (pearsonr(arnum2[0:33,18],arnum2[33:66,i]))[1] ) ).encode('utf-8')
+
 # Para que guarde el resultado: python perDW.py > output.txt
 

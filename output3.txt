@@ -1,0 +1,80 @@
+BA:
+DW concentration vs. percentage (percent, r, p-value)
+Coprostanol: 51.58 ± 10.85; r: 0.66, 0.000 
+Epicoprostanol: 9.35 ± 9.58; r: 0.59, 0.002 
+Ethylcoprostanol: 8.51 ± 4.42; r: 0.21, 0.326 
+Coprostanone: 5.36 ± 3.34; r: 0.14, 0.511 
+Coprostane: 0.04 ± 0.12; r: 0.94, 0.000 
+b-Sitosterol: 4.36 ± 1.86; r: 0.17, 0.433 
+γ-Sitosterol: 0.13 ± 0.30; r: 0.93, 0.000 
+Stigmasterol: 1.04 ± 0.74; r: 0.23, 0.269 
+Stigmastanol: 1.63 ± 0.88; r: 0.40, 0.054 
+Campesterol: 1.13 ± 0.92; r: 0.61, 0.001 
+Campestanol: 0.01 ± 0.01; r: 0.62, 0.001 
+Brassicasterol: 0.00 ± 0.01; r: 0.88, 0.000 
+Desmosterol: 0.01 ± 0.02; r: 0.64, 0.001 
+Cholesterol: 12.32 ± 2.86; r: 0.26, 0.218 
+Cholestanol: 1.67 ± 1.16; r: nan, 1.000 
+Dehydrocholesterol: 2.87 ± 1.22; r: 0.27, 0.195 
+Ergosterol: 0.00 ± 0.00; r: nan, 1.000 
+
+N:
+DW concentration vs. percentage (percent, r, p-value)
+Coprostanol: 1.33 ± 1.26; r: 0.16, 0.373 
+Epicoprostanol: 1.19 ± 1.07; r: 0.53, 0.001 
+Ethylcoprostanol: 3.86 ± 4.75; r: 0.32, 0.072 
+Coprostanone: 1.09 ± 2.17; r: 0.84, 0.000 
+Coprostane: 0.01 ± 0.04; r: 0.72, 0.000 
+b-Sitosterol: 19.26 ± 5.43; r: 0.43, 0.012 
+γ-Sitosterol: 0.62 ± 1.70; r: 0.83, 0.000 
+Stigmasterol: 14.69 ± 7.87; r: 0.19, 0.302 
+Stigmastanol: 8.70 ± 4.41; r: 0.66, 0.000 
+Campesterol: 13.12 ± 10.58; r: -0.07, 0.694 
+Campestanol: 0.64 ± 1.78; r: 0.98, 0.000 
+Brassicasterol: 0.29 ± 0.72; r: 0.87, 0.000 
+Desmosterol: 0.71 ± 1.53; r: 0.68, 0.000 
+Cholesterol: 25.77 ± 11.67; r: 0.79, 0.000 
+Cholestanol: 1.55 ± 2.18; r: 0.50, 0.003 
+Dehydrocholesterol: 6.63 ± 7.53; r: 0.31, 0.075 
+Ergosterol: 0.90 ± 3.40; r: 0.84, 0.000 
+
+Correlation between ind. proportions vs. total DW concentration:
+BA:
+TOTAL concentration vs. percentage (percent, r, p-value)
+Coprostanol: 51.58 ± 10.85; r: 0.55, 0.005 
+Epicoprostanol: 9.35 ± 9.58; r: -0.31, 0.145 
+Ethylcoprostanol: 8.51 ± 4.42; r: -0.16, 0.458 
+Coprostanone: 5.36 ± 3.34; r: -0.24, 0.259 
+Coprostane: 0.04 ± 0.12; r: -0.14, 0.506 
+b-Sitosterol: 4.36 ± 1.86; r: -0.36, 0.083 
+γ-Sitosterol: 0.13 ± 0.30; r: 0.41, 0.044 
+Stigmasterol: 1.04 ± 0.74; r: -0.56, 0.004 
+Stigmastanol: 1.63 ± 0.88; r: -0.37, 0.076 
+Campesterol: 1.13 ± 0.92; r: -0.64, 0.001 
+Campestanol: 0.01 ± 0.01; r: -0.08, 0.693 
+Brassicasterol: 0.00 ± 0.01; r: -0.17, 0.435 
+Desmosterol: 0.01 ± 0.02; r: 0.17, 0.429 
+Cholesterol: 12.32 ± 2.86; r: 0.08, 0.695 
+Cholestanol: 1.67 ± 1.16; r: 0.18, 0.411 
+Dehydrocholesterol: 2.87 ± 1.22; r: -0.06, 0.787 
+Ergosterol: 0.00 ± 0.00; r: nan, 1.000 
+
+N:
+TOTAL concentration vs. percentage (percent, r, p-value)
+Coprostanol: 1.33 ± 1.26; r: -0.31, 0.078 
+Epicoprostanol: 1.19 ± 1.07; r: -0.12, 0.521 
+Ethylcoprostanol: 3.86 ± 4.75; r: -0.39, 0.025 
+Coprostanone: 1.09 ± 2.17; r: 0.04, 0.823 
+Coprostane: 0.01 ± 0.04; r: -0.17, 0.348 
+b-Sitosterol: 19.26 ± 5.43; r: 0.27, 0.134 
+γ-Sitosterol: 0.62 ± 1.70; r: -0.04, 0.814 
+Stigmasterol: 14.69 ± 7.87; r: -0.43, 0.013 
+Stigmastanol: 8.70 ± 4.41; r: 0.09, 0.628 
+Campesterol: 13.12 ± 10.58; r: -0.24, 0.187 
+Campestanol: 0.64 ± 1.78; r: -0.05, 0.799 
+Brassicasterol: 0.29 ± 0.72; r: -0.11, 0.537 
+Desmosterol: 0.71 ± 1.53; r: -0.32, 0.074 
+Cholesterol: 25.77 ± 11.67; r: 0.68, 0.000 
+Cholestanol: 1.55 ± 2.18; r: -0.29, 0.100 
+Dehydrocholesterol: 6.63 ± 7.53; r: -0.06, 0.757 
+Ergosterol: 0.90 ± 3.40; r: -0.04, 0.818 
