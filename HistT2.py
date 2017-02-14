@@ -42,7 +42,7 @@ for a in range(1,18):
 	meandevN = (np.append(meandevN,[[np.mean(arnumdw[sizeBZ:(sizeBZ+sizeN),a])],[np.std(arnumdw[sizeBZ:(sizeBZ+sizeN),a],dtype=float,ddof=1)]], axis = 1))
 
 # creo el fondo de la figura
-fig=plt.figure(facecolor='white', figsize=(7,12))
+fig=plt.figure(facecolor='white', figsize=(7,13.2))
 
 #creo el histograma
 histo = fig.add_axes([0.18, 0.59, 0.8, 0.25])
@@ -56,7 +56,7 @@ rect2 = histo.bar(cols+ancho,meandevN[0,:], ancho, color = 'g', yerr = [np.zeros
 #rect3 = histo.bar(cols+ancho*2,arnumfec[0,1:18], ancho, color = 'brown', yerr = [np.zeros(17),arnumfec[1,1:18]], error_kw = eb3, linewidth=0, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
-histo.set_ylabel('Sterols (ug.$\mathregular{g^{-1}}$)', size=20,**csfont)
+histo.set_ylabel('Trap sterols (ug.$\mathregular{g^{-1}}$)', size=18,**csfont)
 plt.ylim(0,10000)
 plt.xlim(0,17)
 histo.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y,pos: ('{{:.{:1d}f}}'.format(int(np.maximum(-np.log10(y),0)))).format(y)))
@@ -131,7 +131,7 @@ rect4 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'r', yerr=[np.zeros(17), m
 rect5 = histo2.bar(cols+ancho,meansedN[0,:], ancho, color = 'g', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=0, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
-histo2.set_ylabel('Sterols (ug.$\mathregular{g^{-1}}$)', size=20,**csfont)
+histo2.set_ylabel('Sediment sterols (ug.$\mathregular{g^{-1}}$)', size=18,**csfont)
 plt.ylim(0,10000)
 plt.xlim(0,17)
 histo2.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y,pos: ('{{:.{:1d}f}}'.format(int(np.maximum(-np.log10(y),0)))).format(y)))
