@@ -17,7 +17,7 @@ fig=plt.figure(facecolor='white', figsize=(6,12))
 histo = fig.add_axes([0.15, 0.6, 0.7, 0.35])
 cols = np.arange(11) # ctdad de barras (= esteroles)
 wid = 0.4
-EBA = histo.stem(cols+0.6, arnum[4,2:13], linefmt='r-',mec='r', lw=0, markerfmt='rv', basefmt='r-',edgecolor=None)
+markerline, stemlines, baseline = histo.stem(cols+0.6, arnum[4,2:13], linefmt='r-',mec='r', lw=2, markerfmt='rv', basefmt='r-',edgecolor=None)
 csfont = {'fontname':'Liberation Sans'}
 histo.set_ylabel('Vertical flux (mg.$\mathregular{cm^{-2}.year^{-1}}$)', size=18,**csfont)
 plt.ylim(0,90)
@@ -27,6 +27,8 @@ histo.tick_params(length=0, which='both')
 histo.set_xticks(cols+0.5)
 histo.set_xticklabels(headers[2:13], rotation = 90, size=14,**csfont)
 plt.setp(histo.get_xticklabels(),visible=False)
+plt.setp(stemlines, 'lw', 2)
+plt.setp(markerline, 'markeredgecolor', 'r', 'markersize', 8)
 
 for i,j,k in zip(cols,arnum[8,2:13],arnum[4,2:13]):
 	histo.annotate((j),xy=(i+0.22,4), size =11, rotation=90)
@@ -40,6 +42,7 @@ hBA.set_ylabel('Accumulation Efficiency (%)', size=18,**csfont)
 plt.ylim(0,50)
 plt.xlim(0,11)
 plt.yticks(np.arange(0,51,10), size = 14, **csfont)
+plt.axhline(y=arnum[2,13], xmin=0, xmax=1, hold=None, linestyle = '--', color = 'k', lw = 2)
 
 # N
 
@@ -47,7 +50,7 @@ plt.yticks(np.arange(0,51,10), size = 14, **csfont)
 histo2 = fig.add_axes([0.15, 0.2, 0.7, 0.35])
 cols = np.arange(11) # ctdad de barras (= esteroles)
 wid = 0.4
-EN = histo2.stem(cols+0.6, arnum[6,2:13], linefmt='g-', markerfmt='gv', basefmt='g-')
+markerline, stemlines, baseline  = histo2.stem(cols+0.6, arnum[6,2:13], linefmt='g-', markerfmt='gv', basefmt='g-')
 csfont = {'fontname':'Liberation Sans'}
 histo2.set_ylabel('Vertical flux (ug.$\mathregular{cm^{-2}.year^{-1}}$)', size=18,**csfont)
 plt.xlim(0,11)
@@ -56,6 +59,8 @@ plt.yticks(np.arange(0,31,10), size = 14, **csfont)
 histo2.tick_params(length=0, which='both')
 histo2.set_xticks(cols+0.5)
 histo2.set_xticklabels(headers[2:13], rotation = 90, size=14,**csfont)
+plt.setp(stemlines, 'lw',2)
+plt.setp(markerline, 'markeredgecolor', 'g', 'markersize', 8)
 # coloreo las ticklabels segun categoria
 labelcol = ['saddlebrown','saddlebrown','saddlebrown','saddlebrown','limegreen','limegreen','limegreen','limegreen','grey','dodgerblue','dodgerblue']
 [lab.set_color(i) for (i,lab) in zip(labelcol, histo2.xaxis.get_ticklabels())] 
@@ -74,7 +79,7 @@ hN.set_ylabel('Accumulation Efficiency (%)', size=18,**csfont)
 plt.ylim(0,8)
 plt.xlim(0,11)
 plt.yticks(np.arange(0,8.1,2), size = 14, **csfont)
-
+plt.axhline(y=arnum[3,13], xmin=0, xmax=1, hold=None, linestyle = '--', color = 'k',lw = 2)
 
 
 
