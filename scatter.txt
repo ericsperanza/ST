@@ -1,0 +1,4 @@
+2.830233 exp( 0.083552 * x) 
+Pearson for Disch-Flux (r,p-value): (0.73410145034030105, 3.1607745659569007e-08)
+Warm vs. Cold Difference (t-test)
+BA:

@@ -85,9 +85,13 @@ scat1.spines['top'].set_visible(False)
 scat1.xaxis.set_ticks_position('bottom')
 
 
-
-
 print ('%2.6f exp( %2.6f * x) ' % (np.exp(q[1]),q[0]))
 print("Pearson for Disch-Flux (r,p-value):", pearsonr(disch,flux))
+print("Warm vs. Cold Difference (t-test)\nBA:")
+print("%.2f %s %.2f vs %.2f %s %.2f"%( (np.mean(WBZ[:,0])), u"\u00b1", (np.std(WBZ[:,0],dtype=float,ddof=1)), (np.mean(CBZ[:,0])), u"\u00b1", (np.std(CBZ[:,0],dtype=float,ddof=1))))
+
+print(ttest_ind(WBZ[:,0],CBZ[:,0]))
+print("N:\n%.2f %s %.2f vs %.2f %s %.2f"%( (np.mean(WN[:,0])), u"\u00b1", (np.std(WN[:,0],dtype=float,ddof=1)), (np.mean(CN[:,0])), u"\u00b1", (np.std(CN[:,0],dtype=float,ddof=1))))
+print(ttest_ind(WN[:,0],CN[:,0]))
 
 plt.show()
