@@ -92,8 +92,8 @@ box2.spines['right'].set_visible(False)
 box2.tick_params(length=0, which='both')
 box2.axes.get_xaxis().set_visible(False)
 # formateo ejes y ticks
-plt.ylim(0,0.5)
-plt.yticks(np.arange(0,0.51,0.25), size = 16, **csfont)
+plt.ylim(0.5,1)
+plt.yticks(np.arange(0.5,1.01,0.25), size = 16, **csfont)
 plt.xlim(0,1.2)
 
 # agrego titles
