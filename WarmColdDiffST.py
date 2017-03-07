@@ -1,5 +1,4 @@
 # WarmColdDiffST.py
-from __future__ import print_function
 import openpyxl
 import matplotlib.pyplot as plt
 import matplotlib.cbook as cbook
@@ -56,13 +55,13 @@ print (CBZ[:,2])
 
 # imprimo las medias y desvios para cada estacion y variable
 print ("Warm vs. Cold\nBZ:")
-print ("Flux: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,0])),u"\u00b1",(np.std(WBZ[:,0],dtype=float,ddof=1)),(np.mean(CBZ[:,0])),u"\u00b1",(np.std(CBZ[:,0],dtype=float,ddof=1))))
-print ("Coprostanol: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,1])),u"\u00b1",(np.std(WBZ[:,1],dtype=float,ddof=1)),(np.mean(CBZ[:,1])),u"\u00b1",(np.std(CBZ[:,1],dtype=float,ddof=1))))
-print ("Total ST: %.5f %s %.5f vs. %.5f %s %.5f"%((np.mean(WBZ[:,2])),u"\u00b1",(np.std(WBZ[:,2],dtype=float,ddof=1)),(np.mean(CBZ[:,2])),u"\u00b1",(np.std(CBZ[:,2],dtype=float,ddof=1))))
+print ("Flux: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,0])),u"\u00b1",(np.std(WBZ[:,0],dtype=float,ddof=1)),(np.mean(CBZ[:,0])),u"\u00b1",(np.std(CBZ[:,0],dtype=float,ddof=1)))).encode('utf-8')
+print ("Coprostanol: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WBZ[:,1])),u"\u00b1",(np.std(WBZ[:,1],dtype=float,ddof=1)),(np.mean(CBZ[:,1])),u"\u00b1",(np.std(CBZ[:,1],dtype=float,ddof=1)))).encode('utf-8')
+print ("Total ST: %.5f %s %.5f vs. %.5f %s %.5f"%((np.mean(WBZ[:,2])),u"\u00b1",(np.std(WBZ[:,2],dtype=float,ddof=1)),(np.mean(CBZ[:,2])),u"\u00b1",(np.std(CBZ[:,2],dtype=float,ddof=1)))).encode('utf-8')
 print ("N:")
-print ("Flux: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,0])),u"\u00b1",(np.std(WN[:,0],dtype=float,ddof=1)),(np.mean(CN[:,0])),u"\u00b1",(np.std(CN[:,0],dtype=float,ddof=1))))
-print ("Coprostanol: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,1])),u"\u00b1",(np.std(WN[:,1],dtype=float,ddof=1)),(np.mean(CN[:,1])),u"\u00b1",(np.std(CN[:,1],dtype=float,ddof=1))))
-print ("Total ST: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,2])),u"\u00b1",(np.std(WN[:,2],dtype=float,ddof=1)),(np.mean(CN[:,2])),u"\u00b1",(np.std(CN[:,2],dtype=float,ddof=1))))
+print ("Flux: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,0])),u"\u00b1",(np.std(WN[:,0],dtype=float,ddof=1)),(np.mean(CN[:,0])),u"\u00b1",(np.std(CN[:,0],dtype=float,ddof=1)))).encode('utf-8')
+print ("Coprostanol: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,1])),u"\u00b1",(np.std(WN[:,1],dtype=float,ddof=1)),(np.mean(CN[:,1])),u"\u00b1",(np.std(CN[:,1],dtype=float,ddof=1)))).encode('utf-8')
+print ("Total ST: %.2f %s %.2f vs. %.2f %s %.2f"%((np.mean(WN[:,2])),u"\u00b1",(np.std(WN[:,2],dtype=float,ddof=1)),(np.mean(CN[:,2])),u"\u00b1",(np.std(CN[:,2],dtype=float,ddof=1)))).encode('utf-8')
 
 
 
@@ -188,15 +187,20 @@ plt.ylim(0,150)
 plt.yticks(np.arange(0,151,75), size = 13, **csfont)
 plt.xticks(np.arange(4), ('','Warm','Cold',''), size =16, **csfont)
 plt.setp(box3.get_xticklabels(), visible = 'True', fontsize = 16)
+
+headers = []
+for i in ar.columns:
+	headers.append(i)
+
 print(time4.get_xlim())
 print("t-test BZ (flux, copr, total)")
 for a in range(14):
-	print(a, ttest_ind(WBZ[:,a],CBZ[:,a]))
+	print(headers[a+2], ttest_ind(WBZ[:,a],CBZ[:,a]))
 print("Pearson for Flux-ST:")
 print(pearsonr(flux,totalBZ))
 print("t-test N (flux, copr, total)")
 for a in range(14):
-	print(a, ttest_ind(WN[:,a],CN[:,a]))
+	print(headers[a], ttest_ind(WN[:,a],CN[:,a]))
 print("Pearson for Flux-ST:")
 print(pearsonr(fluxN,totalN))
 
