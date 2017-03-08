@@ -101,7 +101,7 @@ box1.text(0.7,1.03,r'Fecal/Phyto', fontsize = 18, **csfont)
 box1.text(6.2,1.03,r'Cop/epiCop', fontsize = 18, **csfont)
 box1.text(10.5,1.03,r'Cop/ethylCop', fontsize = 18, **csfont)
 box1.text(16,1.03,r'Sito/ethylCop', fontsize = 18, **csfont)
-box1.text(21.7,1.03,r'Chnol/Chrol', fontsize = 18, **csfont)
+box1.text(21.7,1.03,r'Chrol/Chnol', fontsize = 18, **csfont)
 
 print("Geographical differences:\nTraps:")
 print("Fecal/Phyto: ", ttest_ind(arnum2[0:24,1],arnum2[25:57,1]))
