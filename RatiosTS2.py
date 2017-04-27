@@ -34,39 +34,39 @@ for a in arnum[:,0]:
 print(sizeTBA, sizeTN, sizeSBA, sizeSN)
 
 # creo el fondo de la figura
-fig=plt.figure(facecolor='white', figsize=(12,6))
+fig=plt.figure(facecolor='white', figsize=(9,6))
 arnum2 = arnum[:,1:6].astype(float)
 csfont = {'fontname':'Liberation Sans'}
 
 # agrego el boxplot
-box1 = fig.add_axes([0.05, 0.10, 0.72, 0.8])
+box1 = fig.add_axes([0.05, 0.10, 0.90, 0.8])
 bprop1 = dict(linewidth = 2, edgecolor = 'k', facecolor = 'k')
 wprop1 = dict(linewidth = 2, linestyle = '-', color = 'k')
 mprop1 = dict(linestyle = '-',linewidth = 2, color = 'w')
 pprop1 = dict(marker = 'o', markeredgecolor = 'w', markerfacecolor = 'w')
 cap1 = dict(linewidth = 2, color = 'k')
-box1.boxplot([arnum2[0:24,1],arnum2[0:24,0],arnum2[0:24,2],arnum2[0:24,3]], vert = True, positions = (3,8,13,18), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop1, whiskerprops = wprop1, medianprops = mprop1, meanprops = pprop1, capprops = cap1)
+box1.boxplot([arnum2[0:24,0],arnum2[0:24,2],arnum2[0:24,3]], vert = True, positions = (3,8,13), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop1, whiskerprops = wprop1, medianprops = mprop1, meanprops = pprop1, capprops = cap1)
 
 bprop2 = dict(linewidth = 2, edgecolor = 'k')
 wprop2 = dict(linewidth = 2, linestyle = '-', color = 'k')
 mprop2 = dict(linestyle = '-',linewidth = 2, color = 'k')
 pprop2 = dict(marker = 'o', markeredgecolor = 'k', markerfacecolor = 'k')
 cap2 = dict(linewidth = 2, color = 'k')
-box1.boxplot([arnum2[57:67,1],arnum2[57:67,0],arnum2[57:67,2],arnum2[57:67,3]], vert = True, positions = (4,9,14,19), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop2, whiskerprops = wprop2, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
+box1.boxplot([arnum2[57:67,0],arnum2[57:67,2],arnum2[57:67,3]], vert = True, positions = (4,9,14), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop2, whiskerprops = wprop2, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
 
 bprop3 = dict(linewidth = 2, edgecolor = 'grey', facecolor = 'grey')
 wprop3 = dict(linewidth = 2, linestyle = '-', color = 'grey')
 mprop3 = dict(linestyle = '-',linewidth = 2, color = 'w')
 pprop3 = dict(marker = 'o', markeredgecolor = 'w', markerfacecolor = 'w')
 cap3 = dict(linewidth = 2, color = 'grey')
-box1.boxplot([arnum2[24:57,1],arnum2[24:57,0],arnum2[24:57,2],arnum2[24:57,3]], vert = True, positions = (1,6,11,16), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop3, whiskerprops = wprop3, medianprops = mprop3, meanprops = pprop3, capprops = cap3)
+box1.boxplot([arnum2[24:57,0],arnum2[24:57,2],arnum2[24:57,3]], vert = True, positions = (1,6,11), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop3, whiskerprops = wprop3, medianprops = mprop3, meanprops = pprop3, capprops = cap3)
 
 bprop4 = dict(linewidth = 2, edgecolor = 'grey')
 wprop4= dict(linewidth = 2, linestyle = '-', color = 'grey')
 mprop4 = dict(linestyle = '-',linewidth = 2, color = 'grey')
 pprop4 = dict(marker = 'o', markeredgecolor = 'grey', markerfacecolor = 'grey')
 cap4 = dict(linewidth = 2, color = 'grey')
-box1.boxplot([arnum2[67:72,1],arnum2[67:72,0],arnum2[67:72,2],arnum2[67:72,3]], vert = True, positions = (2,7,12,17), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop4, whiskerprops = wprop4, medianprops = mprop4, meanprops = pprop4, capprops = cap4)
+box1.boxplot([arnum2[67:72,0],arnum2[67:72,2],arnum2[67:72,3]], vert = True, positions = (2,7,12), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop4, whiskerprops = wprop4, medianprops = mprop4, meanprops = pprop4, capprops = cap4)
 
 # borro ejes, ticks y labels
 box1.spines['top'].set_visible(False)
@@ -77,13 +77,13 @@ box1.axes.get_xaxis().set_visible(False)
 # agrego vertical lines
 plt.vlines(5,0,1,linestyle = '--')
 plt.vlines(10,0,1,linestyle = '--')
-plt.vlines(15,0,1,linestyle = '--')
+#plt.vlines(15,0,1,linestyle = '--')
 # formateo ejes y ticks
 plt.ylim(0,1)
 plt.yticks(np.arange(0,1.1,0.5), size = 16, **csfont)
 plt.xlim(0,20)
 
-box2 = fig.add_axes([0.80, 0.10, 0.15, 0.8])
+box2 = fig.add_axes([0.77, 0.10, 0.18, 0.8])
 box2.boxplot([arnum2[24:57,4]], vert = True, positions = ([0.2]), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop3, whiskerprops = wprop3, medianprops = mprop3, meanprops = pprop3, capprops = cap3)
 box2.boxplot([arnum2[0:24,4]], vert = True, positions = ([0.8]), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop1, whiskerprops = wprop1, medianprops = mprop1, meanprops = pprop1, capprops = cap1)
 box2.boxplot([arnum2[67:72,4]], vert = True, positions = ([0.5]), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop4, whiskerprops = wprop4, medianprops = mprop4, meanprops = pprop4, capprops = cap4)
@@ -100,11 +100,11 @@ plt.yticks(np.arange(0.5,1.01,0.25), size = 16, **csfont)
 plt.xlim(0,1.2)
 
 # agrego titles
-box1.text(0.7,1.03,r'Fecal/Phyto', fontsize = 18, **csfont)
-box1.text(6.2,1.03,r'Cop/epiCop', fontsize = 18, **csfont)
-box1.text(10.5,1.03,r'Cop/ethylCop', fontsize = 18, **csfont)
-box1.text(16,1.03,r'Sito/ethylCop', fontsize = 18, **csfont)
-box1.text(21.7,1.03,r'Chrol/Chnol', fontsize = 18, **csfont)
+#box1.text(0.7,1.03,r'Fecal/Phyto', fontsize = 18, **csfont)
+box1.text(0.8,1.03,r'Cop/epiCop', fontsize = 18, **csfont)
+box1.text(5.7,1.03,r'Cop/ethylCop', fontsize = 18, **csfont)
+box1.text(11,1.03,r'Sito/ethylCop', fontsize = 18, **csfont)
+box1.text(17,1.03,r'Chrol/Chnol', fontsize = 18, **csfont)
 
 print("Geographical differences:\nTraps:")
 print("Fecal/Phyto: ", ttest_ind(arnum2[0:24,1],arnum2[25:57,1]))
