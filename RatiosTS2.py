@@ -54,7 +54,7 @@ pprop2 = dict(marker = 'o', markeredgecolor = 'k', markerfacecolor = 'k')
 cap2 = dict(linewidth = 2, color = 'k')
 box1.boxplot([arnum2[57:67,0],arnum2[57:67,2],arnum2[57:67,3]], vert = True, positions = (4,9,14), notch = False, patch_artist = True, showmeans = True, showfliers = False, boxprops = bprop2, whiskerprops = wprop2, medianprops = mprop2, meanprops = pprop2, capprops = cap2)
 
-bprop3 = dict(linewidth = 2, edgecolor = 'grey', facecolor = 'grey')
+bprop3 = dict(linewidth = 2, edgecolor = 'grey', facecolor = 'silver')
 wprop3 = dict(linewidth = 2, linestyle = '-', color = 'grey')
 mprop3 = dict(linestyle = '-',linewidth = 2, color = 'w')
 pprop3 = dict(marker = 'o', markeredgecolor = 'w', markerfacecolor = 'w')

@@ -49,12 +49,12 @@ fig=plt.figure(facecolor='w', figsize=(7,14.2))
 #creo el histograma
 histo = fig.add_axes([0.18, 0.59, 0.8, 0.25])
 cols = np.arange(17) # ctdad de barras(= esteroles)
-ancho = 0.3
-eb = {'linewidth':2,'capsize':4,'ecolor':'k'}
-eb2 = {'linewidth':2,'capsize':4,'ecolor':'grey'}
+ancho = 0.4
+eb = {'linewidth':2.5,'capsize':4,'capthick':2,'ecolor':'k'}
+eb2 = {'linewidth':2.5,'capsize':4,'capthick':2,'ecolor':'grey'}
 #eb3 = {'linewidth':2,'capsize':4,'ecolor':'brown'}
-rect1 = histo.bar(cols,meandevBZ[0,:],ancho, color = 'k', yerr=[np.zeros(17), meandevBZ[1,:]], error_kw=eb, linewidth=0, log=True)
-rect2 = histo.bar(cols+ancho,meandevN[0,:], ancho, color = 'darkgrey', yerr = [np.zeros(17),meandevN[1,:]], error_kw = eb2, linewidth=0, log=True)
+rect1 = histo.bar(cols,meandevBZ[0,:],ancho, color = 'k', yerr=[np.zeros(17), meandevBZ[1,:]], error_kw=eb, linewidth=1, log=True)
+rect2 = histo.bar(cols+ancho,meandevN[0,:], ancho, color = 'silver', yerr = [np.zeros(17),meandevN[1,:]], error_kw = eb2, linewidth=1,edgecolor='grey', log=True)
 #rect3 = histo.bar(cols+ancho*2,arnumfec[0,1:18], ancho, color = 'brown', yerr = [np.zeros(17),arnumfec[1,1:18]], error_kw = eb3, linewidth=0, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
@@ -127,10 +127,10 @@ for i in range(1,18):
 	meansedN = (np.append(meansedN,[[np.mean(arnumsed[sBZ:(sBZ+sN),i])],[np.std(arnumsed[sBZ:(sBZ+sN),i],dtype=float,ddof=1)]], axis = 1))
 
 #creo el histograma sedimentos
-ancho=0.3
+ancho=0.4
 histo2 = fig.add_axes([0.18, 0.21, 0.8, 0.25])
-rect4 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'k', yerr=[np.zeros(17), meansedBZ[1,:]], error_kw=eb, linewidth=0, log=True)
-rect5 = histo2.bar(cols+ancho,meansedN[0,:], ancho, color = 'darkgrey', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=0, log=True)
+rect4 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'w', yerr=[np.zeros(17), meansedBZ[1,:]], error_kw=eb, linewidth=2.5,edgecolor='k', log=True)
+rect5 = histo2.bar(cols+ancho+0.1,meansedN[0,:], ancho, color = 'w',edgecolor='silver', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=2, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
 histo2.set_ylabel('Sediment sterols (ug.$\mathregular{g^{-1}}$)', size=18,**csfont)

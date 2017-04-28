@@ -36,7 +36,7 @@ for i,j,k in zip(cols,arnum[8,2:13],arnum[4,2:13]):
 
 # creo flux plot
 hBA = histo.twinx()
-hBA.errorbar(cols+0.5,arnum[4,2:13],yerr=arnum[5,2:13],marker='o', markersize=8,markerfacecolor='silver',linestyle='none', lw=1.5,ecolor='silver')
+hBA.errorbar(cols+0.5,arnum[4,2:13],yerr=arnum[5,2:13],marker='o', markersize=8,markerfacecolor='w',markeredgecolor='silver',markeredgewidth=2,linestyle='none', lw=2.5,ecolor='silver',capsize=2.5,capthick=2.5)
 hBA.set_ylabel('Vertical flux (mg.$\mathregular{cm^{-2}.year^{-1}}$)', size=18,**csfont)
 plt.ylim(-50,200)
 plt.xlim(0,11)
@@ -51,7 +51,7 @@ plt.setp(histo.get_xticklabels(),visible=False)
 histo2 = fig.add_axes([0.15, 0.2, 0.7, 0.35])
 cols = np.arange(11) # ctdad de barras (= esteroles)
 wid = 0.4
-histo2.bar(cols+0.2, arnum[3,2:13], 0.6, color = 'w', linewidth=2)
+histo2.bar(cols+0.2, arnum[3,2:13], 0.6, color = 'silver', linewidth=2,edgecolor='grey')
 histo2.set_ylabel('Accumulation Efficiency (%)', size=18,**csfont)
 plt.xlim(0,11)
 plt.ylim(0,8)
@@ -71,7 +71,7 @@ fontdictN2 = dict(color='g',weight='heavy',**csfont)
 
 # creo flux plot N
 hN = histo2.twinx()
-hN.errorbar(cols+0.5,arnum[6,2:13],yerr=arnum[7,2:13],marker='o', markersize=8,markerfacecolor='silver',linestyle='none', lw=1.5,ecolor='silver')
+hN.errorbar(cols+0.5,arnum[6,2:13],yerr=arnum[7,2:13],marker='o', markersize=8,markerfacecolor='w',markeredgecolor='grey',markeredgewidth=2,linestyle='none', lw=2.5,ecolor='grey',capsize=4,capthick=2.5)
 hN.set_ylabel('Vertical flux (ug.$\mathregular{cm^{-2}.year^{-1}}$)', size=18,**csfont)
 plt.ylim(-40,90)
 plt.xlim(0,11)
