@@ -67,8 +67,8 @@ scat1.semilogy(x, func(x, q[1],q[0]),'-',color='black', linewidth = 2)
 scat1.semilogy(WBZ[:,13],WBZ[:,0],'o',color='k',markersize=9, markeredgecolor = 'k')
 scat1.semilogy(CBZ[:,13],CBZ[:,0],'o',color='white',markersize=9, markeredgecolor = 'k')
 #plot N
-scat1.semilogy(WN[:,13],WN[:,0],'o',color='grey',markersize=9, markeredgecolor = 'grey')
-scat1.semilogy(CN[:,13],CN[:,0],'o',color='White',markersize=9, markeredgecolor = 'grey')
+scat1.semilogy(WN[:,13],WN[:,0],'s',color='grey',markersize=9, markeredgecolor = 'grey')
+scat1.semilogy(CN[:,13],CN[:,0],'s',color='White',markersize=9, markeredgecolor = 'grey')
 #labels and limits
 plt.ylim(0,400)
 plt.yticks(size=16,**csfont)
