@@ -129,8 +129,8 @@ for i in range(1,18):
 #creo el histograma sedimentos
 ancho=0.4
 histo2 = fig.add_axes([0.18, 0.21, 0.8, 0.25])
-rect4 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'w', yerr=[np.zeros(17), meansedBZ[1,:]], error_kw=eb, linewidth=2.5,edgecolor='k', log=True)
-rect5 = histo2.bar(cols+ancho+0.1,meansedN[0,:], ancho, color = 'w',edgecolor='silver', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=2, log=True)
+rect4 = histo2.bar(cols,meansedBZ[0,:],ancho, color = 'k', yerr=[np.zeros(17), meansedBZ[1,:]], error_kw=eb, linewidth=1,edgecolor='k', log=True)
+rect5 = histo2.bar(cols+ancho+0.1,meansedN[0,:], ancho, color = 'silver',edgecolor='grey', yerr = [np.zeros(17),meansedN[1,:]], error_kw = eb2, linewidth=1, log=True)
 # labels y ejes
 csfont = {'fontname':'Liberation Sans'}
 histo2.set_ylabel('Sediment sterols (ug.$\mathregular{g^{-1}}$)', size=18,**csfont)
