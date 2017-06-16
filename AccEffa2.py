@@ -37,7 +37,7 @@ for i,j,k in zip(cols,arnum[8,2:13],arnum[4,2:13]):
 # creo flux plot
 hBA = histo.twinx()
 hBA.errorbar(cols+0.5,arnum[4,2:13],yerr=arnum[5,2:13],marker='o', markersize=8,markerfacecolor='w',markeredgecolor='silver',markeredgewidth=2,linestyle='none', lw=2.5,ecolor='silver',capsize=2.5,capthick=2.5)
-hBA.set_ylabel('Vertical flux (mg.$\mathregular{cm^{-2}.year^{-1}}$)', size=18,**csfont)
+hBA.set_ylabel('Vertical flux (mg/$\mathregular{cm^{2}/year}$)', size=18,**csfont)
 plt.ylim(-50,200)
 plt.xlim(0,11)
 plt.yticks(np.arange(0,201,50), size = 14, **csfont)
@@ -72,7 +72,7 @@ fontdictN2 = dict(color='g',weight='heavy',**csfont)
 # creo flux plot N
 hN = histo2.twinx()
 hN.errorbar(cols+0.5,arnum[6,2:13],yerr=arnum[7,2:13],marker='o', markersize=8,markerfacecolor='w',markeredgecolor='grey',markeredgewidth=2,linestyle='none', lw=2.5,ecolor='grey',capsize=4,capthick=2.5)
-hN.set_ylabel('Vertical flux (ug.$\mathregular{cm^{-2}.year^{-1}}$)', size=18,**csfont)
+hN.set_ylabel("Vertical flux (%sg/$\mathregular{cm^{2}/year}$)"%(u"\u03BC"), size=18,**csfont)
 plt.ylim(-40,90)
 plt.xlim(0,11)
 plt.yticks(np.arange(0,91,30), size = 14, **csfont)
