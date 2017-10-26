@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 
 # importo datos de excel y paso valores al array arnum
-libro = openpyxl.load_workbook('HistRatios.xlsx')
-hoja = libro.get_sheet_by_name('ratios')
+#libro = openpyxl.load_workbook('HistRatios.xlsx')
+#hoja = libro.get_sheet_by_name('ratios')
 ar = pd.read_excel('HistRatios.xlsx','ratios',header=0, index_col=None, na_values=['NA'])
 arnum=ar.values
 headers=list(ar)
