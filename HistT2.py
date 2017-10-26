@@ -44,7 +44,7 @@ for a in range(1,17):
 	meandevN = (np.append(meandevN,[[np.mean(arnumdw[sizeBZ:(sizeBZ+sizeN),a])],[np.std(arnumdw[sizeBZ:(sizeBZ+sizeN),a],dtype=float,ddof=1)]], axis = 1))
 
 # creo el fondo de la figura
-fig=plt.figure(facecolor='w', figsize=(6,14.2))
+fig=plt.figure(facecolor='w', figsize=(7,14.2))
 
 #creo el histograma
 histo = fig.add_axes([0.18, 0.59, 0.8, 0.25])
