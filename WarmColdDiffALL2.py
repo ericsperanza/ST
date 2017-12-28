@@ -1,6 +1,6 @@
 # WarmColdDiffALL.py
 from __future__ import print_function
-import openpyxl
+#import openpyxl
 import matplotlib.pyplot as plt
 import matplotlib.cbook as cbook
 import matplotlib.dates as mdates
@@ -13,8 +13,8 @@ import pandas as pd
 import datetime
 
 # importo datos de excel y paso valores al array arnum
-libro = openpyxl.load_workbook('compWC.xlsx')
-hoja = libro.get_sheet_by_name('h3')
+#libro = openpyxl.load_workbook('compWC.xlsx')
+#hoja = libro.get_sheet_by_name('h3')
 ar = pd.read_excel('compWC.xlsx','h3', header=0, index_col=None, na_values=['NA'])
 arnum=ar.values
 
