@@ -10,9 +10,9 @@ import numpy as np
 import pandas as pd
 
 # importo datos de excel y paso valores al array arnum
-libro = openpyxl.load_workbook('HistRatios.xlsx')
-hojadw = libro.get_sheet_by_name('dw')
-hojapp = libro.get_sheet_by_name('pp')
+#libro = openpyxl.load_workbook('HistRatios.xlsx')
+#hojadw = libro.get_sheet_by_name('dw')
+#hojapp = libro.get_sheet_by_name('pp')
 ardw = pd.read_excel('HistRatios.xlsx','dw',header=0, index_col=None, na_values=['NA'])
 arnumdw=ardw.values
 headers=list(ardw)

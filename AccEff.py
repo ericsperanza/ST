@@ -2,10 +2,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import openpyxl
+#import openpyxl
 
 # importo datos de excel y paso valores al array arnum
-libro = openpyxl.load_workbook('sedDegr.xlsx')
+#libro = openpyxl.load_workbook('sedDegr.xlsx')
 ar = pd.read_excel('sedDegr.xlsx','Graph',header=0, index_col=None, na_values=['NA'])
 arnum=ar.values
 headers=list(ar)
